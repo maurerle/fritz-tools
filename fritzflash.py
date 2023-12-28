@@ -916,7 +916,7 @@ if __name__ == "__main__":
                 "236": "FRITZ7530.bin",
                 "244": "FRITZ1200.bin",
                 "246": "FRITZ3000.bin",
-                "247": "FRITZ7530.bin",
+                "247": "FRITZ7520.bin",
             }
             tftp_serve_name = tftp_serve_file.get(hwrevision, "")
 
