@@ -460,7 +460,7 @@ def flash_message():
 def finish_message():
     print(
         "\n== Congratulations! ==\n\n"
-        "Your device is now running Gluon.\n"
+        "Your device is now running Gluon/OpenWRT.\n"
         "It will restart and in 2-5 minutes you will be able to visit its config-mode.\n"
         "Remember to reconfigure your interface to automatically obtain an IP-address!\n"
         "You can reach config-mode by typing in http://192.168.1.1/ in your preferred Webbrowser.\n"
@@ -544,6 +544,9 @@ def determine_image_name(env_string):
             "openwrt": [
                 "openwrt-lantiq-xrx200-avm_fritz7360-v1-squashfs-sysupgrade.bin"
             ],
+        },
+        "185": {
+            "openwrt": ["openwrt-lantiq-xrx200-avm_fritz7490-micron-initramfs-kernel.bin"]
         },
         "188": {
             "gluon": ["avm-fritz-box-7330-sl-sysupgrade.bin"],
@@ -704,6 +707,7 @@ def perform_flash(ip, file):
         "openwrt-lantiq-xrx200-avm_fritz7412-initramfs-kernel.bin",
         "openwrt-lantiq-xrx200-avm_fritz7362sl-initramfs-kernel.bin",
         "openwrt-lantiq-xrx200-avm_fritz7430-initramfs-kernel.bin",
+        "openwrt-lantiq-xrx200-avm_fritz7490-micron-initramfs-kernel.bin",
         "openwrt-lantiq-xrx200-avm_fritz3390-initramfs-kernel.bin",
     ]:
         size = file.stat().st_size
@@ -727,6 +731,7 @@ def perform_flash(ip, file):
             if file.name in [
                 "openwrt-lantiq-xrx200-avm_fritz7412-initramfs-kernel.bin",
                 "openwrt-lantiq-xrx200-avm_fritz7430-initramfs-kernel.bin",
+                "openwrt-lantiq-xrx200-avm_fritz7490-micron-initramfs-kernel.bin",
                 "openwrt-lantiq-xrx200-avm_fritz3390-initramfs-kernel.bin",
             ]:
                 ftp.voidcmd("SETENV linux_fs_start 0")
