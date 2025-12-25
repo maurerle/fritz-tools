@@ -579,6 +579,9 @@ def determine_image_name(env_string):
         "209": {
             "openwrt": ["openwrt-lantiq-xrx200-avm_fritz7412-initramfs-kernel.bin"]
         },
+        "212": {
+            "openwrt": ["openwrt-lantiq-xrx200-avm_fritz3490-initramfs-kernel.bin"]
+        },
         "218": {
             "openwrt": ["openwrt-lantiq-xrx200-avm_fritz7430-initramfs-kernel.bin"]
         },
@@ -709,6 +712,7 @@ def perform_flash(ip, file):
         "openwrt-lantiq-xrx200-avm_fritz7430-initramfs-kernel.bin",
         "openwrt-lantiq-xrx200-avm_fritz7490-micron-initramfs-kernel.bin",
         "openwrt-lantiq-xrx200-avm_fritz3390-initramfs-kernel.bin",
+        "openwrt-lantiq-xrx200-avm_fritz3490-initramfs-kernel.bin",
     ]:
         size = file.stat().st_size
         assert size < 0x2000000
@@ -733,6 +737,7 @@ def perform_flash(ip, file):
                 "openwrt-lantiq-xrx200-avm_fritz7430-initramfs-kernel.bin",
                 "openwrt-lantiq-xrx200-avm_fritz7490-micron-initramfs-kernel.bin",
                 "openwrt-lantiq-xrx200-avm_fritz3390-initramfs-kernel.bin",
+                "openwrt-lantiq-xrx200-avm_fritz3490-initramfs-kernel.bin",
             ]:
                 ftp.voidcmd("SETENV linux_fs_start 0")
             ftp.voidcmd("SETENV memsize 0x%08x" % (addr))
